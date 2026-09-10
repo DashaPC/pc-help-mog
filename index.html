@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pc_help_mog — сборка и ремонт ПК в Могилёве</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+    <img src="images/logo.png" alt="pc_help_mog — логотип" class="logo">
+  </header>
+
+    <nav>
+    <a href="#about">Почему я</a>
+    <a href="#skills">Что я умею</a>
+    <a href="#trust">Мне доверяют</a>
+    <a href="#services">Услуги и цены</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+
+  <!-- Кнопка открытия формы -->
+  <div class="order-button-wrap">
+    <button id="openOrderForm" class="order-button">📝 Оставить заявку</button>
+  </div>
+
+  <!-- Модальное окно с формой заявки -->
+  <div id="orderModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" id="closeOrderForm">&times;</span>
+      <h2>Оставить заявку</h2>
+      <p class="modal-subtitle">Заполните форму, и я свяжусь с вами для уточнения деталей.</p>
+
+      <form id="orderForm" action="https://formspree.io/f/xljezlry" method="POST" enctype="multipart/form-data">
+        <label for="orderName">Ваше имя *</label>
+        <input type="text" id="orderName" name="Имя" placeholder="Как к вам обращаться" required>
+
+        <label for="orderPhone">Телефон для связи *</label>
+        <input type="tel" id="orderPhone" name="Телефон" placeholder="+375 XX XXX-XX-XX" required>
+
+        <label for="orderEmail">Email (если удобно)</label>
+        <input type="email" id="orderEmail" name="Email" placeholder="example@mail.com">
+
+        <label for="orderProblem">Опишите проблему или задачу</label>
+        <textarea id="orderProblem" name="Проблема" rows="4" placeholder="Например: ноутбук сильно шумит и выключается"></textarea>
+
+        <label for="orderFiles">Прикрепить фото или видео (необязательно)</label>
+        <input type="file" id="orderFiles" name="Файлы" accept="image/*,video/*" multiple>
+        <small class="file-hint">До 10 файлов, каждый до 10 МБ</small>
+
+        <label for="orderInternet">Есть ли дома интернет?</label>
+        <select id="orderInternet" name="Есть ли дома интернет">
+          <option value="">— Выберите вариант —</option>
+          <option value="Да, есть">Да, есть</option>
+          <option value="Нет, нужен мобильный">Нет, нужен мобильный интернет</option>
+          <option value="Не знаю">Не знаю</option>
+        </select>
+
+        <label for="orderTime">Удобное время для звонка *</label>
+        <select id="orderTime" name="Удобное время для звонка" required>
+          <option value="">— Выберите вариант —</option>
+          <option value="Утро (9:00–12:00)">Утро (9:00–12:00)</option>
+          <option value="День (12:00–17:00)">День (12:00–17:00)</option>
+          <option value="Вечер (17:00–20:00)">Вечер (17:00–20:00)</option>
+          <option value="Любое время">Любое время</option>
+        </select>
+
+        <button type="submit" class="order-submit">Отправить заявку</button>
+      </form>
+    </div>
+  </div>
+
+    <!-- Преимущества -->
+    <!-- Почему выбирают меня -->
+  <section id="about">
+    <h2>Почему выбирают меня</h2>
+    <ul class="features">
+      <li>🆓 <strong>Диагностика — бесплатно</strong> (если не смогу помочь, денег не возьму)</li>
+      <li>🚗 <strong>Выезжаю по Могилёву</strong> в удобное для вас время</li>
+      <li>🔧 <strong>Работаю аккуратно</strong>, объясняю всё понятно</li>
+      <li>💬 <strong>Всегда на связи</strong> до и после ремонта</li>
+    </ul>
+  </section>
+
+  <!-- Что я умею -->
+  <section id="skills">
+    <h2>Что я умею</h2>
+    <ul class="skills-list">
+      <li>Установка Windows любой версии, настройка драйверов</li>
+      <li>Чистка ноутбуков и ПК от пыли с заменой термопасты</li>
+      <li>Диагностика: почему тормозит, шумит, выключается</li>
+      <li>Сборка ПК с нуля под ваши задачи и бюджет</li>
+      <li>Помощь с выбором комплектующих (не переплачивайте!)</li>
+    </ul>
+  </section>
+
+  <!-- Почему мне доверяют -->
+  <section id="trust">
+    <h2>Почему мне доверяют</h2>
+    <ul class="trust-list">
+      <li>Я живу в Могилёве и дорожу своей репутацией.</li>
+      <li>У меня есть реальные отзывы и примеры работ (переходи в Instagram).</li>
+      <li>Я всегда на связи: если после ремонта что-то пошло не так — помогу бесплатно.</li>
+    </ul>
+  </section>
+
+  <!-- Услуги и цены -->
+  <section id="services">
+    <h2>Услуги и цены</h2>
+    <table>
+      <tr>
+        <th>Услуга</th>
+        <th>Цена</th>
+      </tr>
+      <tr>
+        <td>Сборка ПК под заказ</td>
+        <td>от 50 р.</td>
+      </tr>
+      <tr>
+        <td>Диагностика</td>
+        <td>бесплатно при выезде</td>
+      </tr>
+      <tr>
+        <td>Установка Windows</td>
+        <td>25 р.</td>
+      </tr>
+      <tr>
+        <td>Чистка от пыли + замена термопасты</td>
+        <td>40 р.</td>
+      </tr>
+    </table>
+
+    <div class="note">
+      <p><strong>Важно:</strong> цена может измениться в зависимости от некоторых факторов. Все детали обговариваются заранее.</p>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <section id="contacts">
+    <h2>Контакты</h2>
+    <p><strong>Телефон:</strong> <a href="tel:+375333590700">+375 33 359-07-00</a></p>
+    <p><strong>Email:</strong> <a href="mailto:dasha.pomozova79@gmail.com">dasha.pomozova79@gmail.com</a></p>
+    <p><strong>Город:</strong> Могилёв</p>
+
+    <div class="contact-icons">
+      <a href="https://t.me/a_gde_cola" target="_blank" class="icon-link">
+        <img src="images/telegram.png" alt="Telegram pc_help_mog">
+      </a>
+      <a href="https://www.instagram.com/pc_help_mog" target="_blank" class="icon-link">
+        <img src="images/qr-instagram.png" alt="QR-код Instagram pc_help_mog">
+      </a>
+    </div>
+  </section>
+
+    <footer>
+    <p>© 2026 pc_help_mog</p>
+    <p>УНП MB1525494</p>
+  </footer>
+
+  <script>
+    const modal = document.getElementById('orderModal');
+    const openBtn = document.getElementById('openOrderForm');
+    const closeBtn = document.getElementById('closeOrderForm');
+
+    openBtn.addEventListener('click', () => {
+      modal.classList.add('active');
+      document.body.classList.add('modal-open');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('active');
+      document.body.classList.remove('modal-open');
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+        document.body.classList.remove('modal-open');
+      }
+    });
+  </script>
+
+</body>
+</html>
